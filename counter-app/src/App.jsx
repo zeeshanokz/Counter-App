@@ -8,6 +8,12 @@ function App() {
 const date = new Date("29 Jan 2026");
 date.setDate(date.getDate() + count);
 
+const MIN_COUNT = 0;
+const MIX_COUNT = 30;
+
+const MIN_STEP = 1;
+const MIX_STEP = 20;
+
 
   return (
 
@@ -16,15 +22,15 @@ date.setDate(date.getDate() + count);
      <h1 className='text-center mb-2 mt-4' >Counter</h1>
     
      <div className='text-center items-center'>
-     <button className='pr-2.5' onClick={() => setCount((c) => c -1)}> - </button>
+     <button className='pr-2.5' onClick={() => setCount(c => Math.max(MIN_COUNT, c -1))}> - </button>
      <span>count: {count}</span>
-      <button className='pl-2.5' onClick={() => setCount(count + 1)}> + </button>
+      <button className='pl-2.5' onClick={() => setCount(c =>Math.min(MIX_COUNT, c + 1))}> + </button>
      </div>
     
      <div className='text-center'>
-     <button className='pr-2.5' onClick={() => setStep((s) => s - 1)}> - </button>
+     <button className='pr-2.5' onClick={() => setStep(s => Math.max(MIN_STEP, s - 1))}> - </button>
      <span>step: {step}</span>
-      <button className='pl-2.5' onClick={() => setStep((s) => s + 1 )}> + </button>
+      <button className='pl-2.5' onClick={() => setStep(s => Math.min(MIX_STEP, s + 1 ))}> + </button>
      </div>
      <p className='text-center'>
     {/* <span>
