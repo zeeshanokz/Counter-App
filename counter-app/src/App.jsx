@@ -12,7 +12,7 @@ date.setDate(date.getDate() + count);
   return (
 
     <>
-    <div className= "justify-center font-bold mt-24 border-2 border-black border-dotted w-100 h-50 ml-86">
+    <div className= "justify-center font-bold mt-24 border-2 bg-blue-400 border-black border-dotted w-100 h-50 ml-86">
      <h1 className='text-center mb-2 mt-4' >Counter</h1>
     
      <div className='text-center items-center'>
@@ -23,16 +23,20 @@ date.setDate(date.getDate() + count);
     
      <div className='text-center'>
      <button className='pr-2.5' onClick={() => setStep((s) => s - 1)}> - </button>
-     <span>Step: {step}</span>
+     <span>step: {step}</span>
       <button className='pl-2.5' onClick={() => setStep((s) => s + 1 )}> + </button>
      </div>
      <p className='text-center'>
-    <span>
+    {/* <span>
           {count === 0
             ? "Today is "
             : count > 0
             ? `${count} days from today is `
             : `${Math.abs(count)} days ago was `}
+        </span>
+        <span>{date.toDateString()}</span> */}
+        <span>
+          {count === 0 ? "Today is" : count > 0 ? `${count} days from today is` : `${Math.abs(count)} days ago was`}
         </span>
         <span>{date.toDateString()}</span>
       </p>
